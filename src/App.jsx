@@ -46,7 +46,7 @@ function App() {
     />
     <button
       onClick={copyPasswordToClipboard}
-      className="outline-none bg-blue-500 text-white px-3 py-1 rounded-r-md hover:bg-blue-600 transition duration-300"
+      className="outline-none bg-blue-500 text-white px-3 py-1 rounded-r-md hover:bg-purple-600 transition duration-300"
     >
       Copy
     </button>
@@ -95,6 +95,7 @@ function App() {
     </div>
   </div>
 </div>
+
 
 
 
