@@ -9,4 +9,6 @@ Currently, two official plugins are available:
 
 # Password-generator
 
-You can check out the [password-generator app here](https://password-generator-henna-six.vercel.app/).
+You can check out the [password-generator app](https://password-generator-henna-six.vercel.app/) for generating secure passwords. This tool allows you to customize your password by specifying the length, including numbers, and choosing whether to include alphabets. Once you've configured your preferences, you can easily copy the generated password.
+
+[Open the password generator in a new tab](https://password-generator-henna-six.vercel.app/){:target="_blank"}.
