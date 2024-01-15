@@ -102,7 +102,7 @@ function App() {
                 accentColor: "rgb(166, 221, 17)",
               }}
             />
-            <label htmlFor="charInput" className="text-gray-300">
+            <label htmlFor="charInput" className="text-gray-300 break-all">
               Characters
             </label>
           </div>
