@@ -22,7 +22,7 @@ function App() {
 
   const copyPasswordToClipboard = useCallback(() => {
     passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0,99)
+    passwordRef.current?.setSelectionRange(0, 99);
     window.navigator.clipboard.writeText(password);
   }, [password]);
   useEffect(() => {
@@ -30,75 +30,84 @@ function App() {
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
   return (
     <>
-     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-white bg-gradient-to-r from-purple-700 to-indigo-800">
-  <h1 className="text-center my-3 flex shadow rounded-lg overflow-hidden mb-4 text-3xl font-bold">
-    Password Generator
-  </h1>
+      <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-white bg-gradient-to-r from-purple-700 to-indigo-800">
+        <h1 className="text-center my-3 flex shadow rounded-lg overflow-hidden mb-4 text-3xl font-bold">
+          Password Generator
+        </h1>
 
-  <div className="flex shadow rounded-lg overflow-hidden mb-4">
-    <input
-      type="text"
-      value={password}
-      className="outline-none w-full py-1 px-3 bg-gray-700 text-white rounded-l-md"
-      placeholder="Password"
-      ref={passwordRef}
-      readOnly
-    />
-    <button
-      onClick={copyPasswordToClipboard}
-      className="outline-none bg-blue-500 text-white px-3 py-1 rounded-r-md hover:bg-purple-600 transition duration-300"
-    >
-      Copy
-    </button>
-  </div>
+        <div className="flex shadow rounded-lg overflow-hidden mb-4">
+          <input
+            type="text"
+            value={password}
+            className="outline-none w-full py-1 px-3 bg-gray-700 text-white rounded-l-md"
+            placeholder="Password"
+            ref={passwordRef}
+            readOnly
+          />
+          <button
+            onClick={copyPasswordToClipboard}
+            className="outline-none bg-blue-500 text-white px-3 py-1 rounded-r-md hover:bg-purple-600 transition duration-300"
+          >
+            Copy
+          </button>
+        </div>
 
-  <div className="flex text-sm gap-x-2 items-center">
-    <div className="flex items-center gap-x-1">
-      <input
-        type="range"
-        min={6}
-        max={100}
-        value={length}
-        className="cursor-pointer bg-gray-300 rounded-md"
-        onChange={(e) => {
-          setLength(e.target.value);
-        }}
-        style={{
-          background: `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${(length / 100) * 100}%, #d3d3d3 ${(length / 100) * 100}%, #d3d3d3 100%)`,
-        }}
-      />
-      <label className="text-gray-300">Length: {length}</label>
-    </div>
+        <div className="flex text-sm gap-x-2 items-center">
+          <div className="flex items-center gap-x-1">
+            <input
+              type="range"
+              min={6}
+              max={100}
+              value={length}
+              className="cursor-pointer bg-gray-300 rounded-md"
+              onChange={(e) => {
+                setLength(e.target.value);
+              }}
+              style={{
+                background: `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${
+                  (length / 100) * 100
+                }%, #d3d3d3 ${(length / 100) * 100}%, #d3d3d3 100%)`,
+              }}
+            />
+            <label className="text-gray-300">Length: {length}</label>
+          </div>
 
-    <div className="flex items-center gap-x-1">
-      <input
-        type="checkbox"
-        defaultChecked={numberAllowed}
-        id="numberInput"
-        onChange={() => {
-          setNumberAllowed((prev) => !prev);
-        }}
-      />
-      <label htmlFor="numberInput" className="text-gray-300">Numbers</label>
-    </div>
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              id="numberInput"
+              style={{
+                accentColor: "rgb(166, 221, 17)",
+              }}
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
+            />
 
-    <div className="flex items-center gap-x-1">
-      <input
-        type="checkbox"
-        defaultChecked={charAllowed}
-        id="charInput"
-        onChange={() => {
-          setCharAllowed((prev) => !prev);
-        }}
-      />
-      <label htmlFor="charInput" className="text-gray-300">Characters</label>
-    </div>
-  </div>
-</div>
+            <label htmlFor="numberInput" className="text-gray-300">
+              Numbers
+            </label>
+          </div>
 
-
-
-
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={charAllowed}
+              id="charInput"
+              onChange={() => {
+                setCharAllowed((prev) => !prev);
+              }}
+              style={{
+                accentColor: "rgb(166, 221, 17)",
+              }}
+            />
+            <label htmlFor="charInput" className="text-gray-300">
+              Characters
+            </label>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
