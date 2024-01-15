@@ -35,31 +35,31 @@ function App() {
           Password Generator
         </h1>
 
-        <div className="flex shadow rounded-lg overflow-hidden mb-4">
+        <div className="flex flex-col mb-4">
           <input
             type="text"
             value={password}
-            className="outline-none w-full py-1 px-3 bg-gray-700 text-white rounded-l-md"
+            className="outline-none w-full py-1 px-3 bg-gray-700 text-white rounded-md mb-2"
             placeholder="Password"
             ref={passwordRef}
             readOnly
           />
           <button
             onClick={copyPasswordToClipboard}
-            className="outline-none bg-blue-500 text-white px-3 py-1 rounded-r-md hover:bg-purple-600 transition duration-300"
+            className="outline-none bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-purple-600 transition duration-300"
           >
             Copy
           </button>
         </div>
 
-        <div className="flex text-sm gap-x-2 items-center">
+        <div className="flex flex-col text-sm gap-y-2 items-center mb-4">
           <div className="flex items-center gap-x-1">
             <input
               type="range"
               min={6}
               max={100}
               value={length}
-              className="cursor-pointer bg-gray-300 rounded-md"
+              className="cursor-pointer bg-gray-300 rounded-md w-full"
               onChange={(e) => {
                 setLength(e.target.value);
               }}
@@ -84,7 +84,6 @@ function App() {
                 setNumberAllowed((prev) => !prev);
               }}
             />
-
             <label htmlFor="numberInput" className="text-gray-300">
               Numbers
             </label>
